@@ -76,10 +76,10 @@ k2:
 	add $t4, $t3, $t4
 	j mostra_int
 k3:
-	sub  $t4, $t1, $t2
+	sub  $t4, $t3, $t4
 	j mostra_int
 k4:			
-	sub   $t4, $t3, $t4
+	sub   $t4, $t1, $t4
 	j mostra_int		
 	
 mostra_int:
