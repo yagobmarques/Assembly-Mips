@@ -18,14 +18,13 @@ main:
 	add $t3, $zero, 41
 	add $t4, $zero, 19
 	# Remodelando: x > 19 e x < 41
-	slt $t1, $t3, $s0
-	slt $t2, $s0,$t4 
+	slt $t1, $s0, $t3
+	slt $t2, $t4, $s0
 	beq $t1, $t2, padrao
 	li $v0, 4
 	la $a0, str2
 	syscall
 	j fim
-	
 padrao:
 	li $v0, 4
 	la $a0, str3
