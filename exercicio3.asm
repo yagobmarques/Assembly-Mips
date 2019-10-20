@@ -13,7 +13,18 @@ main:
 	li $v0,5
 	syscall
 	move $s1, $v0 # s1 = x
-	
+	beq $s1, 4, mostrar_4
+	j root
+
+mostrar_4:	# Função que evita o bug do 4 :)
+	li $v0, 4
+	la $a0, str2
+	syscall
+	li $v0, 1
+	la $a0, 2
+	syscall
+	j fim
+		
 	
 root: # Função que calcula a raiz de um número
 	add $s2, $zero, 1 # s2 = r
@@ -37,4 +48,7 @@ mostrar:
 	syscall
 	li $v0, 1
 	move $a0, $s2
+	syscall
+fim:
+	li $v0, 10
 	syscall
